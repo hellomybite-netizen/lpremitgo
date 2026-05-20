@@ -77,7 +77,7 @@ const testimonials = [
 
 const trustSlides = [
   {
-    image: "/long.jpg",
+    image: "/lpbrigolong.jpg",
     title: "Cabang Yuen Long",
     desc: "Shop 3, G/F, Yuen Long Commercial Centre, 18-24 Kau Yuk Road, Yuen Long, Hong Kong"
   },
