@@ -139,7 +139,10 @@ export default function App() {
               <span className="text-xl font-bold tracking-tight text-[#003b9c]">Remit.go</span>
             </div>
           </div>
-          <button className="bg-[#003b9c] text-white px-5 py-2 rounded-full font-medium text-sm hover:opacity-90 transition-opacity">
+          <button 
+            onClick={() => document.getElementById('download-section')?.scrollIntoView({ behavior: 'smooth' })}
+            className="bg-[#003b9c] text-white px-5 py-2 rounded-full font-medium text-sm hover:opacity-90 transition-opacity"
+          >
             Download Sekarang
           </button>
         </div>
@@ -175,23 +178,28 @@ export default function App() {
               ))}
             </div>
 
-            <div className="flex flex-wrap gap-4 items-center mb-8">
-              <button className="flex items-center gap-2 bg-[#003b9c] text-white px-6 py-3.5 rounded-xl font-bold shadow-lg shadow-blue-200 hover:scale-105 transition-transform">
-                <Download className="w-5 h-5" /> Mulai Sekarang
-              </button>
+            <div className="flex flex-wrap gap-2 sm:gap-3 items-center mb-8">
+              <a
+                href="https://wa.me/85252920848"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 bg-[#25D366] text-white px-4 py-2.5 rounded-xl font-semibold text-sm shadow-lg shadow-green-200 hover:scale-105 transition-transform"
+              >
+                <img src="/lpbrigo/wa.png" alt="WA" className="w-4 h-4 object-contain" /> Hubungi Admin CS
+              </a>
 
               <a
                 href="https://play.google.com/store"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 bg-[#003b9c] text-white px-5 py-2.5 rounded-xl font-bold hover:scale-105 transition-transform shadow-lg shadow-blue-200/50"
+                className="flex items-center gap-2 bg-[#003b9c] text-white px-3 py-2 rounded-xl font-semibold hover:scale-105 transition-transform shadow-lg shadow-blue-200/50"
               >
                 <div className="p-0.5 rounded-lg">
-                  <img src="/lpbrigo/playstore.png" alt="Play Store" className="w-6 h-6 object-contain" />
+                  <img src="/lpbrigo/playstore.png" alt="Play Store" className="w-5 h-5 object-contain" />
                 </div>
                 <div className="text-left font-sans">
-                  <p className="text-[9px] uppercase opacity-75 leading-none mb-1">Download di</p>
-                  <p className="text-sm leading-none">Google Play</p>
+                  <p className="text-[8px] uppercase opacity-75 leading-none mb-0.5">Download di</p>
+                  <p className="text-xs leading-none">Google Play</p>
                 </div>
               </a>
 
@@ -199,14 +207,14 @@ export default function App() {
                 href="https://apps.apple.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 bg-slate-900 text-white px-5 py-2.5 rounded-xl font-bold hover:scale-105 transition-transform shadow-lg shadow-slate-900/10"
+                className="flex items-center gap-2 bg-slate-900 text-white px-3 py-2 rounded-xl font-semibold hover:scale-105 transition-transform shadow-lg shadow-slate-900/10"
               >
                 <div className="p-0.5 rounded-lg">
-                  <img src="/lpbrigo/appstore.png" alt="App Store" className="w-6 h-6 object-contain" />
+                  <img src="/lpbrigo/appstore.png" alt="App Store" className="w-5 h-5 object-contain" />
                 </div>
                 <div className="text-left font-sans">
-                  <p className="text-[9px] uppercase opacity-75 leading-none mb-1">Download di</p>
-                  <p className="text-sm leading-none">App Store</p>
+                  <p className="text-[8px] uppercase opacity-75 leading-none mb-0.5">Download di</p>
+                  <p className="text-xs leading-none">App Store</p>
                 </div>
               </a>
             </div>
@@ -788,7 +796,7 @@ export default function App() {
             <div className="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/20 border border-slate-700 bg-slate-800">
               <iframe
                 className="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/y9j-BL5ocW8"
+                src="https://www.youtube.com/embed/lEgz5TlkwTc"
                 title="Tutorial Menggunakan Remit.go"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -833,7 +841,7 @@ export default function App() {
       </Section>
 
       {/* Final CTA Section */}
-      <div className="bg-[#0a0f18] py-24 relative overflow-hidden">
+      <div id="download-section" className="bg-[#0a0f18] py-24 relative overflow-hidden">
         {/* Background Watermark */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden opacity-5 select-none">
           <span className="text-[20rem] font-black text-white whitespace-nowrap">remit.go!</span>
@@ -887,8 +895,8 @@ export default function App() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 text-slate-300 hover:text-white transition-colors group"
             >
-              <div className="w-10 h-10 rounded-full bg-emerald-500 flex items-center justify-center text-white group-hover:scale-110 transition-transform">
-                <ShieldCheck className="w-6 h-6" />
+              <div className="w-10 h-10 rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-transform">
+                <img src="/lpbrigo/wa.png" alt="WA" className="w-10 h-10 object-contain" />
               </div>
               <span className="font-medium">Ada pertanyaan? Chat via WhatsApp</span>
             </a>
