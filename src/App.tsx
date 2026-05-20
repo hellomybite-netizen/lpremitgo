@@ -77,30 +77,26 @@ const testimonials = [
 
 const trustSlides = [
   {
-    image: "/lpbrigo/remitbrigo.png",
-    title: "Kantor Cabang Hong Kong",
-    desc: "Siap melayani keluhan dan bantuan tatap muka 7 hari seminggu."
+    image: "/lpbrigo/long.jpg",
+    title: "Cabang Yuen Long",
+    desc: "Shop 3, G/F, Yuen Long Commercial Centre, 18-24 Kau Yuk Road, Yuen Long, Hong Kong"
   },
   {
-    image: "/lpbrigo/1.png",
-    title: "Layanan Aman & Terpercaya",
-    desc: "Keamanan data dan dana terjamin dengan sistem enkripsi perbankan tingkat tinggi."
+    image: "/lpbrigo/maibranch.jpg",
+    title: "Pusat Causeway Bay",
+    desc: "Shop B, G/F, Keswick Mansion, 57 Keswick Street, Causeway Bay, Hong Kong"
   },
   {
-    image: "/lpbrigo/2.png",
-    title: "Didukung Penuh oleh BRI",
-    desc: "Partner resmi Bank Rakyat Indonesia (BRI) untuk jaminan kepastian transaksi."
+    image: "/lpbrigo/mongkok.jpg",
+    title: "Cabang Mong Kok",
+    desc: "Shop A, G/F, 78 Argyle Street, Mong Kok, Kowloon, Hong Kong"
   },
   {
-    image: "/lpbrigo/3.png",
-    title: "Transaksi Instan",
-    desc: "Kirim uang ke semua bank dan e-wallet hanya dalam hitungan detik saja."
+    image: "/lpbrigo/wan.jpg",
+    title: "Cabang Tsuen Wan",
+    desc: "G/F, 123 Sha Tsui Road, Tsuen Wan, New Territories, Hong Kong"
   },
-  {
-    image: "/lpbrigo/4.png",
-    title: "Setor Tunai Mudah",
-    desc: "Praktis setor tunai kapan saja lewat jaringan kasir 7-Eleven terdekat di seluruh Hong Kong."
-  }
+
 ];
 
 const branches = [
@@ -397,7 +393,7 @@ export default function App() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-[#003b9c] via-[#0052cc] to-[#0157e3] rounded-3xl p-8 md:p-12 shadow-xl shadow-blue-900/20 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden border border-blue-400/20"
+            className="bg-linear-to-br from-[#003b9c] via-[#0052cc] to-bri-blue rounded-3xl p-8 md:p-12 shadow-xl shadow-blue-900/20 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden border border-blue-400/20"
           >
             {/* Decorative background glow */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
@@ -789,14 +785,14 @@ export default function App() {
             <p className="text-slate-400 mb-12">
               Tonton video singkat berikut untuk melihat betapa mudahnya mengirim uang ke Indonesia menggunakan aplikasi Remit.go.
             </p>
-            
+
             <div className="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/20 border border-slate-700 bg-slate-800">
-              <iframe 
+              <iframe
                 className="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/y9j-BL5ocW8" 
-                title="Tutorial Menggunakan Remit.go" 
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                src="https://www.youtube.com/embed/y9j-BL5ocW8"
+                title="Tutorial Menggunakan Remit.go"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
             </div>
