@@ -59,7 +59,7 @@ const testimonials = [
     name: "Siti Aminah",
     role: "Perawat di HK Island",
     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Siti&baseColor=f9c9b6&clothing=blazer&clothingColor=3c4e5e&hair=longButNotTooLong&hairColor=2c1b18",
-    content: "Dulu tiap bulan harus ke Causeway Bay buat antre kirim uang. Sekarang sambil istirahat kerja aja bisa kirim uang lewat Remit.go. Kursnya selalu bersaing!"
+    content: "Dulu tiap bulan harus ke Causeway Bay buat antre kirim uang. Sekarang sambil istirahat kerja aja bisa kirim uang lewat remit.go!. Kursnya selalu bersaing!"
   },
   {
     name: "Budi Santoso",
@@ -71,7 +71,7 @@ const testimonials = [
     name: "Ratna Sari",
     role: "Domestic Helper di New Territories",
     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Ratna&baseColor=f9c9b6&clothing=collarAndSweater&clothingColor=3c4e5e&hair=bob&hairColor=2c1b18",
-    content: "Awalnya ragu kirim online, tapi karena Remit.go didukung BRI saya jadi tenang. Verifikasinya cepat dan aplikasinya gampang dipakai buat yang gaptek kayak saya."
+    content: "Awalnya ragu kirim online, tapi karena remit.go! didukung BRI saya jadi tenang. Verifikasinya cepat dan aplikasinya gampang dipakai buat yang gaptek kayak saya."
   }
 ];
 
@@ -170,7 +170,7 @@ export default function App() {
               Kirim Uang ke Indonesia <span className="text-[#003b9c]">Gak Pake Ribet, Gak Pake Antre!</span>
             </h1>
             <p className="text-lg text-slate-600 mb-8 max-w-lg">
-              Capek kerja seminggu, masa waktu libur habis cuma buat antre kirim uang? Di <span className="font-semibold text-[--color-bri-blue]">Remit.go</span>, kirim uang semudah kirim pesan. Kurs Tinggi, Biaya Murah, dan Pasti Sampai!
+              Capek kerja seminggu, masa waktu libur habis cuma buat antre kirim uang? Di <span className="font-semibold text-[--color-bri-blue]">remit.go!</span>, kirim uang semudah kirim pesan. Kurs Tinggi, Biaya Murah, dan Pasti Sampai!
             </p>
 
             <div className="space-y-4 mb-8">
@@ -364,7 +364,7 @@ export default function App() {
         <Section>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Kenapa Ribuan PMI di Hong Kong Pindah ke Remit.go?
+              Kenapa Ribuan PMI di Hong Kong Pindah ke remit.go?
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -419,7 +419,7 @@ export default function App() {
 
             <div className="text-left relative z-10">
               <h3 className="text-2xl font-bold text-white mb-2">Siap Kirim Uang Lebih Cepat & Hemat?</h3>
-              <p className="text-blue-100">Download aplikasi Remit.go sekarang gratis di smartphone Anda.</p>
+              <p className="text-blue-100">Download aplikasi remit.go! sekarang gratis di smartphone Anda.</p>
             </div>
             <div className="flex flex-wrap gap-4 shrink-0 justify-center relative z-10">
               <a
@@ -532,7 +532,7 @@ export default function App() {
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Aman & Terpercaya di Bawah Naungan BRI</h2>
               <p className="text-slate-400 text-lg mb-8">
-                Remit.go merupakan partner resmi Bank Rakyat Indonesia (BRI) di Hong Kong. Kami menjamin setiap transaksi diawasi oleh otoritas keuangan kedua negara.
+                remit.go! merupakan partner resmi Bank Rakyat Indonesia (BRI) di Hong Kong. Kami menjamin setiap transaksi diawasi oleh otoritas keuangan kedua negara.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
@@ -652,7 +652,7 @@ export default function App() {
               Testimoni Pengguna
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Apa Kata Mereka yang Menggunakan Remit.go?
+              Apa Kata Mereka yang Menggunakan remit.go!
             </h2>
             <p className="text-slate-600">
               Lebih dari 50.000+ Pekerja Migran Indonesia (PMI) di Hong Kong telah mempercayakan pengiriman uang mereka bersama kami.
@@ -710,17 +710,17 @@ export default function App() {
               Tutorial & Panduan
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Lebih Dekat dengan Remit.go
+              Lebih Dekat dengan remit.go!
             </h2>
             <p className="text-slate-400 mb-12">
-              Tonton video singkat berikut untuk melihat betapa mudahnya mengirim uang ke Indonesia menggunakan aplikasi Remit.go.
+              Tonton video singkat berikut untuk melihat betapa mudahnya mengirim uang ke Indonesia menggunakan aplikasi remit.go!
             </p>
 
             <div className="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/20 border border-slate-700 bg-slate-800">
               <iframe
                 className="absolute top-0 left-0 w-full h-full"
                 src="https://www.youtube.com/embed/lEgz5TlkwTc"
-                title="Tutorial Menggunakan Remit.go"
+                title="Tutorial Menggunakan remit.go!"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -737,8 +737,8 @@ export default function App() {
           <div className="space-y-2">
             {[
               {
-                q: "Apakah Remit.go aman digunakan?",
-                a: "Sangat aman. Remit.go beroperasi di bawah lisensi resmi MSO Hong Kong dan diawasi oleh otoritas perbankan di Indonesia melalui kemitraan dengan BRI."
+                q: "Apakah remit.go! aman digunakan?",
+                a: "Sangat aman. remit.go! beroperasi di bawah lisensi resmi MSO Hong Kong dan diawasi oleh otoritas perbankan di Indonesia melalui kemitraan dengan BRI."
               },
               {
                 q: "Berapa lama uang sampai ke Indonesia?",
@@ -836,7 +836,7 @@ export default function App() {
               <img src="/lpremitgo/logobaru.png" alt="Logo" className="h-8 w-auto" />
             </div>
           </div>
-          <p className="text-slate-500 text-sm">© 2026 Remit.go by BRI. Licensed MSO 19-03-02451.</p>
+          <p className="text-slate-500 text-sm">© 2026 remit.go! by BRI. Licensed MSO 19-03-02451.</p>
           <div className="flex gap-6">
             <button className="text-slate-400 hover:text-[#003b9c] transition-colors"><Smartphone className="w-5 h-5" /></button>
             <button className="text-slate-400 hover:text-[#003b9c] transition-colors"><ShieldCheck className="w-5 h-5" /></button>
