@@ -135,8 +135,7 @@ export default function App() {
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-2">
               {/* Logo diletakkan langsung di depan teks */}
-              <img src="/lpbrigo/logobrigo.png" alt="Logo" className="h-8 w-auto" />
-              <span className="text-xl font-bold tracking-tight text-[#003b9c]">Remit.go</span>
+              <img src="/lpbrigo/remitbrigo.png" alt="Logo" className="h-8 w-auto" />
             </div>
           </div>
           <button 
@@ -632,94 +631,7 @@ export default function App() {
         </Section>
       </div>
 
-      {/* Commitment Section */}
-      <div className="bg-white">
-        <Section>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="order-2 lg:order-1"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold mb-8">Bukan Aplikasi Biasa, Ini Persembahan BRI untuk PMI.</h2>
 
-              <div className="space-y-8">
-                <div className="flex gap-4">
-                  <div className="shrink-0 w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center">
-                    <ShieldCheck className="w-6 h-6 text-[#003b9c]" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Resmi & Aman</h3>
-                    <p className="text-slate-600 leading-relaxed">
-                      Diawasi oleh otoritas keuangan dan memiliki kantor cabang fisik di Hong Kong (bukan aplikasi fiktif).
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="shrink-0 w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center">
-                    <Star className="w-6 h-6 text-[#003b9c]" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Rating Tinggi</h3>
-                    <p className="text-slate-600 leading-relaxed">
-                      Dipercaya oleh lebih dari 200.000 pengguna dengan rating 4.9 di Play Store.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="order-1 lg:order-2"
-            >
-              <div className="relative">
-                <div className="absolute -inset-4 bg-blue-100/50 rounded-[3rem] blur-2xl -z-10" />
-                <img
-                  src="gambar4brigo.png"
-                  alt="BRI Commitment"
-                  className="w-full h-auto rounded-4xl shadow-xl"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-            </motion.div>
-          </div>
-        </Section>
-      </div>
-
-      {/* Promo Section */}
-      <section className="px-6 md:px-12 max-w-7xl mx-auto py-12">
-        <div className="bg-[#003b9c] rounded-[3rem] p-10 md:p-[50px] text-white relative overflow-hidden h-auto md:h-[430px] flex items-center">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2" />
-
-          <div className="relative z-10 text-center max-w-3xl mx-auto w-full">
-            <h2 className="text-3xl md:text-5xl font-bold mb-12 h-auto md:h-[42px]">Promo Khusus Buat Kamu!</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                { title: "Gratis Ongkir", subtitle: "Transaksi Pertama" },
-                { title: "Flat 10 HKD", subtitle: "Biaya 7-Eleven" },
-                { title: "Bonus Kurs", subtitle: "s/d +55 Poin" }
-              ].map((promo, i) => (
-                <motion.div
-                  key={i}
-                  whileHover={{ scale: 1.05 }}
-                  className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl"
-                >
-                  <p className="text-2xl font-bold mb-1">{promo.title}</p>
-                  <p className="text-blue-100 text-sm">{promo.subtitle}</p>
-                </motion.div>
-              ))}
-            </div>
-            <button className="mt-12 bg-white text-[#060202] px-10 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-colors shadow-xl">
-              Ambil Promonya Sekarang
-            </button>
-          </div>
-        </div>
-      </section>
 
       {/* Testimonial Section (Terpisah) */}
       <section className="bg-slate-50 py-20 px-6 border-y border-slate-100">
@@ -910,8 +822,7 @@ export default function App() {
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-2">
               {/* Logo diletakkan langsung di depan teks */}
-              <img src="/lpbrigo/logobrigo.png" alt="Logo" className="h-8 w-auto" />
-              <span className="text-xl font-bold tracking-tight text-[#003b9c]">Remit.go</span>
+              <img src="/lpbrigo/remitbrigo.png" alt="Logo" className="h-8 w-auto" />
             </div>
           </div>
           <p className="text-slate-500 text-sm">© 2026 Remit.go by BRI. Licensed MSO 19-03-02451.</p>
