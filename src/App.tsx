@@ -77,22 +77,22 @@ const testimonials = [
 
 const trustSlides = [
   {
-    image: "/lpbrigo/long.jpg",
+    image: "/lpremitgo/long.jpg",
     title: "Cabang Yuen Long",
     desc: "Shop 3, G/F, Yuen Long Commercial Centre, 18-24 Kau Yuk Road, Yuen Long, Hong Kong"
   },
   {
-    image: "/lpbrigo/maibranch.jpg",
+    image: "/lpremitgo/maibranch.jpg",
     title: "Pusat Causeway Bay",
     desc: "Shop B, G/F, Keswick Mansion, 57 Keswick Street, Causeway Bay, Hong Kong"
   },
   {
-    image: "/lpbrigo/mongkok.jpg",
+    image: "/lpremitgo/mongkok.jpg",
     title: "Cabang Mong Kok",
     desc: "Shop A, G/F, 78 Argyle Street, Mong Kok, Kowloon, Hong Kong"
   },
   {
-    image: "/lpbrigo/wan.jpg",
+    image: "/lpremitgo/wan.jpg",
     title: "Cabang Tsuen Wan",
     desc: "G/F, 123 Sha Tsui Road, Tsuen Wan, New Territories, Hong Kong"
   },
@@ -135,7 +135,7 @@ export default function App() {
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-2">
               {/* Logo diletakkan langsung di depan teks */}
-              <img src="/lpbrigo/remitbrigo.png" alt="Logo" className="h-8 w-auto" />
+              <img src="/lpremitgo/remitbrigo.png" alt="Logo" className="h-8 w-auto" />
             </div>
           </div>
           <button 
@@ -184,7 +184,7 @@ export default function App() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 bg-[#25D366] text-white px-4 py-2.5 rounded-xl font-semibold text-sm shadow-lg shadow-green-200 hover:scale-105 transition-transform"
               >
-                <img src="/lpbrigo/wa.png" alt="WA" className="w-4 h-4 object-contain" /> Hubungi Admin CS
+                <img src="/lpremitgo/wa.png" alt="WA" className="w-4 h-4 object-contain" /> Hubungi Admin CS
               </a>
 
               <a
@@ -194,7 +194,7 @@ export default function App() {
                 className="flex items-center gap-2 bg-[#003b9c] text-white px-3 py-2 rounded-xl font-semibold hover:scale-105 transition-transform shadow-lg shadow-blue-200/50"
               >
                 <div className="p-0.5 rounded-lg">
-                  <img src="/lpbrigo/playstore.png" alt="Play Store" className="w-5 h-5 object-contain" />
+                  <img src="/lpremitgo/playstore.png" alt="Play Store" className="w-5 h-5 object-contain" />
                 </div>
                 <div className="text-left font-sans">
                   <p className="text-[8px] uppercase opacity-75 leading-none mb-0.5">Download di</p>
@@ -209,7 +209,7 @@ export default function App() {
                 className="flex items-center gap-2 bg-slate-900 text-white px-3 py-2 rounded-xl font-semibold hover:scale-105 transition-transform shadow-lg shadow-slate-900/10"
               >
                 <div className="p-0.5 rounded-lg">
-                  <img src="/lpbrigo/appstore.png" alt="App Store" className="w-5 h-5 object-contain" />
+                  <img src="/lpremitgo/appstore.png" alt="App Store" className="w-5 h-5 object-contain" />
                 </div>
                 <div className="text-left font-sans">
                   <p className="text-[8px] uppercase opacity-75 leading-none mb-0.5">Download di</p>
@@ -250,7 +250,7 @@ export default function App() {
           >
             <div className="absolute -inset-10 bg-blue-400/10 blur-[100px] rounded-full -z-10" />
             <img
-              src="/lpbrigo/imagehero.png"
+              src="/lpremitgo/imagehero.png"
               alt="Remit.go App Mockup"
               className="w-full h-auto drop-shadow-2xl"
               referrerPolicy="no-referrer"
@@ -282,62 +282,62 @@ export default function App() {
             {/* List 10 Banner - Ganti src dengan file Anda di folder public */}
             <SwiperSlide>
               <div className="aspect-3/4 w-full rounded-2xl overflow-hidden shadow-lg">
-                <img src="/lpbrigo/1.png" className="w-full h-full object-cover" alt="Banner 1" />
+                <img src="/lpremitgo/1.png" className="w-full h-full object-cover" alt="Banner 1" />
               </div>
             </SwiperSlide>
 
             <SwiperSlide>
               <div className="aspect-3/4 w-full rounded-2xl overflow-hidden shadow-lg">
-                <img src="/lpbrigo/2.png" className="w-full h-full object-cover" alt="Banner 2" />
+                <img src="/lpremitgo/2.png" className="w-full h-full object-cover" alt="Banner 2" />
               </div>
             </SwiperSlide>
 
             <SwiperSlide>
               <div className="aspect-3/4 w-full rounded-2xl overflow-hidden shadow-lg">
-                <img src="/lpbrigo/3.png" className="w-full h-full object-cover" alt="Banner 3" />
+                <img src="/lpremitgo/3.png" className="w-full h-full object-cover" alt="Banner 3" />
               </div>
             </SwiperSlide>
 
             <SwiperSlide>
               <div className="aspect-3/4 w-full rounded-2xl overflow-hidden shadow-lg">
-                <img src="/lpbrigo/4.png" className="w-full h-full object-cover" alt="Banner 4" />
+                <img src="/lpremitgo/4.png" className="w-full h-full object-cover" alt="Banner 4" />
               </div>
             </SwiperSlide>
 
             <SwiperSlide>
               <div className="aspect-3/4 w-full rounded-2xl overflow-hidden shadow-lg">
-                <img src="/lpbrigo/5.png" className="w-full h-full object-cover" alt="Banner 4" />
+                <img src="/lpremitgo/5.png" className="w-full h-full object-cover" alt="Banner 4" />
               </div>
             </SwiperSlide>
 
             <SwiperSlide>
               <div className="aspect-3/4 w-full rounded-2xl overflow-hidden shadow-lg">
-                <img src="/lpbrigo/6.png" className="w-full h-full object-cover" alt="Banner 4" />
+                <img src="/lpremitgo/6.png" className="w-full h-full object-cover" alt="Banner 4" />
               </div>
             </SwiperSlide>
 
             <SwiperSlide>
               <div className="aspect-3/4 w-full rounded-2xl overflow-hidden shadow-lg">
-                <img src="/lpbrigo/7.png" className="w-full h-full object-cover" alt="Banner 4" />
+                <img src="/lpremitgo/7.png" className="w-full h-full object-cover" alt="Banner 4" />
               </div>
             </SwiperSlide>
 
             <SwiperSlide>
               <div className="aspect-3/4 w-full rounded-2xl overflow-hidden shadow-lg">
-                <img src="/lpbrigo/8.png" className="w-full h-full object-cover" alt="Banner 4" />
+                <img src="/lpremitgo/8.png" className="w-full h-full object-cover" alt="Banner 4" />
               </div>
             </SwiperSlide>
 
             <SwiperSlide>
               <div className="aspect-3/4 w-full rounded-2xl overflow-hidden shadow-lg">
-                <img src="/lpbrigo/9.png" className="w-full h-full object-cover" alt="Banner 4" />
+                <img src="/lpremitgo/9.png" className="w-full h-full object-cover" alt="Banner 4" />
               </div>
             </SwiperSlide>
 
             {/* Lanjutkan sampai Banner 10 */}
             <SwiperSlide>
               <div className="aspect-3/4 w-full rounded-2xl overflow-hidden shadow-lg">
-                <img src="/lpbrigo/10.png" className="w-full h-full object-cover" alt="Banner 10" />
+                <img src="/lpremitgo/10.png" className="w-full h-full object-cover" alt="Banner 10" />
               </div>
             </SwiperSlide>
 
@@ -418,7 +418,7 @@ export default function App() {
                 className="flex items-center gap-3 bg-white text-[#003b9c] px-6 py-3 rounded-xl font-bold hover:scale-105 transition-transform shadow-lg shadow-black/10 hover:shadow-white/10"
               >
                 <div className="p-0.5 rounded-lg">
-                  <img src="/lpbrigo/playstore.png" alt="Play Store" className="w-6 h-6 object-contain" />
+                  <img src="/lpremitgo/playstore.png" alt="Play Store" className="w-6 h-6 object-contain" />
                 </div>
                 <div className="text-left font-sans">
                   <p className="text-[10px] uppercase opacity-75 leading-none mb-1">Download di</p>
@@ -433,7 +433,7 @@ export default function App() {
                 className="flex items-center gap-3 bg-white/10 border border-white/20 text-white px-6 py-3 rounded-xl font-bold hover:scale-105 transition-transform shadow-lg shadow-black/10 hover:bg-white/20"
               >
                 <div className="p-0.5 rounded-lg">
-                  <img src="/lpbrigo/appstore.png" alt="App Store" className="w-6 h-6 object-contain" />
+                  <img src="/lpremitgo/appstore.png" alt="App Store" className="w-6 h-6 object-contain" />
                 </div>
                 <div className="text-left font-sans">
                   <p className="text-[10px] uppercase opacity-75 leading-none mb-1">Download di</p>
@@ -568,7 +568,7 @@ export default function App() {
                   className="flex items-center gap-3 bg-[#003b9c] text-white px-6 py-3 rounded-xl font-bold hover:scale-105 transition-transform"
                 >
                   <div className="p-0.5 rounded-lg">
-                    <img src="/lpbrigo/playstore.png" alt="Play Store" className="w-6 h-6 object-contain" />
+                    <img src="/lpremitgo/playstore.png" alt="Play Store" className="w-6 h-6 object-contain" />
                   </div>
                   <div className="text-left">
                     <p className="text-[10px] uppercase opacity-70 leading-none mb-1">Download di</p>
@@ -583,7 +583,7 @@ export default function App() {
                   className="flex items-center gap-3 bg-slate-800 border border-slate-700 text-white px-6 py-3 rounded-xl font-bold hover:scale-105 transition-transform"
                 >
                   <div className="p-0.5 rounded-lg">
-                    <img src="/lpbrigo/appstore.png" alt="App Store" className="w-6 h-6 object-contain" />
+                    <img src="/lpremitgo/appstore.png" alt="App Store" className="w-6 h-6 object-contain" />
                   </div>
                   <div className="text-left">
                     <p className="text-[10px] uppercase opacity-70 leading-none mb-1">Download di</p>
@@ -782,7 +782,7 @@ export default function App() {
             <div className="flex flex-wrap justify-center gap-4 mb-12">
               <button className="flex items-center gap-3 bg-[#003b9c] text-white px-8 py-3.5 rounded-2xl font-bold hover:scale-105 transition-transform">
                 <div className="p-0.5 rounded-lg">
-                  <img src="/lpbrigo/playstore.png" alt="Play Store" className="w-6 h-6 object-contain" />
+                  <img src="/lpremitgo/playstore.png" alt="Play Store" className="w-6 h-6 object-contain" />
                 </div>
                 <div className="text-left">
                   <p className="text-[10px] uppercase opacity-70 leading-none mb-1">Download di</p>
@@ -792,7 +792,7 @@ export default function App() {
 
               <button className="flex items-center gap-3 bg-slate-800 border border-slate-700 text-white px-8 py-3.5 rounded-2xl font-bold hover:scale-105 transition-transform">
                 <div className="p-0.5 rounded-lg">
-                  <img src="/lpbrigo/appstore.png" alt="App Store" className="w-6 h-6 object-contain" />
+                  <img src="/lpremitgo/appstore.png" alt="App Store" className="w-6 h-6 object-contain" />
                 </div>
                 <div className="text-left">
                   <p className="text-[10px] uppercase opacity-70 leading-none mb-1">Download di</p>
@@ -808,7 +808,7 @@ export default function App() {
               className="inline-flex items-center gap-3 text-slate-300 hover:text-white transition-colors group"
             >
               <div className="w-10 h-10 rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-transform">
-                <img src="/lpbrigo/wa.png" alt="WA" className="w-10 h-10 object-contain" />
+                <img src="/lpremitgo/wa.png" alt="WA" className="w-10 h-10 object-contain" />
               </div>
               <span className="font-medium">Ada pertanyaan? Chat via WhatsApp</span>
             </a>
@@ -822,7 +822,7 @@ export default function App() {
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-2">
               {/* Logo diletakkan langsung di depan teks */}
-              <img src="/lpbrigo/remitbrigo.png" alt="Logo" className="h-8 w-auto" />
+              <img src="/lpremitgo/remitbrigo.png" alt="Logo" className="h-8 w-auto" />
             </div>
           </div>
           <p className="text-slate-500 text-sm">© 2026 Remit.go by BRI. Licensed MSO 19-03-02451.</p>
