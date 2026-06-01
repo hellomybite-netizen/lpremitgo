@@ -138,12 +138,23 @@ export default function App() {
               <img src="/lpremitgo/logobaru.png" alt="Logo" className="h-8 w-auto" />
             </div>
           </div>
-          <button 
-            onClick={() => document.getElementById('download-section')?.scrollIntoView({ behavior: 'smooth' })}
-            className="bg-[#003b9c] text-white px-5 py-2 rounded-full font-medium text-sm hover:opacity-90 transition-opacity"
-          >
-            Download Sekarang
-          </button>
+          <div className="flex items-center gap-3">
+            <a 
+              href="https://wa.me/85252920848"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#25D366] text-white px-5 py-2 rounded-full font-medium text-sm hover:opacity-90 transition-opacity flex items-center gap-2 shadow-sm"
+            >
+              <img src="/lpremitgo/wa.png" alt="WA" className="w-4 h-4 object-contain brightness-0 invert" />
+              Tanya kami
+            </a>
+            <button 
+              onClick={() => document.getElementById('download-section')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-[#003b9c] text-white px-5 py-2 rounded-full font-medium text-sm hover:opacity-90 transition-opacity shadow-sm"
+            >
+              Download Sekarang
+            </button>
+          </div>
         </div>
       </nav>
 
