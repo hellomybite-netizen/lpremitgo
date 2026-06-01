@@ -135,7 +135,7 @@ export default function App() {
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-2">
               {/* Logo diletakkan langsung di depan teks */}
-              <img src="/lpremitgo/remitbrigo.png" alt="Logo" className="h-8 w-auto" />
+              <img src="/lpremitgo/logobaru.png" alt="Logo" className="h-8 w-auto" />
             </div>
           </div>
           <button 
@@ -822,7 +822,7 @@ export default function App() {
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-2">
               {/* Logo diletakkan langsung di depan teks */}
-              <img src="/lpremitgo/remitbrigo.png" alt="Logo" className="h-8 w-auto" />
+              <img src="/lpremitgo/logobaru.png" alt="Logo" className="h-8 w-auto" />
             </div>
           </div>
           <p className="text-slate-500 text-sm">© 2026 Remit.go by BRI. Licensed MSO 19-03-02451.</p>
