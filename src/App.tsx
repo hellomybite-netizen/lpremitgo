@@ -128,7 +128,7 @@ const branches = [
 
 export default function App() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
