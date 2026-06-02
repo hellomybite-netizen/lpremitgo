@@ -434,92 +434,6 @@ export default function App() {
         </div>
       </Section>
 
-      {/* Testimonial Section (Terpisah) */}
-      <section className="bg-slate-50 py-20 px-6 border-y border-slate-100">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <div className="inline-block bg-blue-50 text-[#003b9c] font-bold text-xs uppercase px-4 py-1.5 rounded-full mb-4">
-              Testimoni Pengguna
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Apa Kata Mereka yang Menggunakan remit.go!
-            </h2>
-            <p className="text-slate-600">
-              Lebih dari 50.000+ Pekerja Migran Indonesia (PMI) di Hong Kong telah mempercayakan pengiriman uang mereka bersama kami.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((t, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="bg-white p-8 rounded-3xl border border-slate-100 shadow-lg shadow-slate-100/50 flex flex-col justify-between hover:-translate-y-2 transition-transform duration-300"
-              >
-                <div>
-                  <div className="flex text-amber-400 gap-1 mb-6">
-                    <Star className="w-5 h-5 fill-current" />
-                    <Star className="w-5 h-5 fill-current" />
-                    <Star className="w-5 h-5 fill-current" />
-                    <Star className="w-5 h-5 fill-current" />
-                    <Star className="w-5 h-5 fill-current" />
-                  </div>
-                  <p className="text-slate-700 italic text-lg leading-relaxed mb-6 font-light">
-                    "{t.content}"
-                  </p>
-                </div>
-                <div className="flex items-center gap-4 pt-6 border-t border-slate-100">
-                  <img
-                    src={t.avatar}
-                    alt={t.name}
-                    className="w-12 h-12 rounded-full border border-slate-100 bg-slate-100"
-                  />
-                  <div>
-                    <p className="font-bold text-slate-900 leading-none mb-1">{t.name}</p>
-                    <p className="text-xs text-slate-500 font-medium">{t.role}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Video Section */}
-      <section className="bg-slate-900 py-20 px-6 border-y border-slate-800">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="inline-block bg-blue-900/50 text-blue-400 font-bold text-xs uppercase px-4 py-1.5 rounded-full mb-4 border border-blue-400/20">
-              Tutorial & Panduan
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Lebih Dekat dengan remit.go!
-            </h2>
-            <p className="text-slate-400 mb-12">
-              Tonton video singkat berikut untuk melihat betapa mudahnya mengirim uang ke Indonesia menggunakan aplikasi remit.go!
-            </p>
-
-            <div className="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/20 border border-slate-700 bg-slate-800">
-              <iframe
-                className="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/lEgz5TlkwTc"
-                title="Tutorial Menggunakan remit.go!"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Trust Section */}
       <div className="bg-slate-900 text-white overflow-hidden">
         <Section>
@@ -730,39 +644,6 @@ export default function App() {
         </div>
       </div>
       {/* --- End Section Slider --- */}
-      {/* FAQ Section */}
-      <Section>
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Paling Sering Ditanyakan (FAQ)</h2>
-          <div className="space-y-2">
-            {[
-              {
-                q: "Apakah remit.go! aman digunakan?",
-                a: "Sangat aman. remit.go! beroperasi di bawah lisensi resmi MSO Hong Kong dan diawasi oleh otoritas perbankan di Indonesia melalui kemitraan dengan BRI."
-              },
-              {
-                q: "Berapa lama uang sampai ke Indonesia?",
-                a: "Untuk transaksi ke bank besar seperti BRI, Mandiri, dan E-wallet, uang akan masuk secara instan dalam hitungan menit (real-time)."
-              },
-              {
-                q: "Bagaimana cara setor tunai di 7-Eleven?",
-                a: "Pilih menu 'Setor Tunai' di aplikasi, masukkan jumlah uang. Tunjukkan kode barcode yang muncul di aplikasi ke kasir 7-Eleven. Bayar uang tunai ke kasir, dan saldo akan langsung terapdate."
-              },
-              {
-                q: "Apakah ada batas maksimal kiriman?",
-                a: "Batas pengiriman disesuaikan dengan aturan regulasi. Untuk akun terverifikasi, Anda dapat mengirim hingga 8,000 HKD per hari."
-              },
-              {
-                q: "Apa yang harus dilakukan jika uang belum sampai?",
-                a: "Tim CS kami tersedia 24/7 di aplikasi atau bisa kunjungi kantor cabang kami di Hong Kong untuk bantuan langsung."
-              }
-            ].map((faq, i) => (
-              <FAQItem key={i} question={faq.q} answer={faq.a} />
-            ))}
-          </div>
-        </div>
-      </Section>
-
       {/* Final CTA Section */}
       <div id="download-section" className="bg-[#0a0f18] py-24 relative overflow-hidden">
         {/* Background Watermark */}
