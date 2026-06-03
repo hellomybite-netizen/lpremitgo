@@ -138,19 +138,19 @@ export default function App() {
               <img src="/lpremitgo/logobaru.png" alt="Logo" className="h-8 w-auto" />
             </div>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4">
             <a 
               href="https://wa.me/85252920848"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#25D366] text-white px-5 py-2 rounded-full font-medium text-sm hover:opacity-90 transition-opacity flex items-center gap-2 shadow-sm"
+              className="bg-[#25D366] text-white px-6 py-2.5 rounded-full font-bold text-base hover:opacity-90 transition-opacity flex items-center gap-2.5 shadow-sm"
             >
-              <img src="/lpremitgo/wa.png" alt="WA" className="w-4 h-4 object-contain brightness-0 invert" />
+              <img src="/lpremitgo/wa.png" alt="WA" className="w-5 h-5 object-contain brightness-0 invert" />
               Tanya kami
             </a>
             <button 
               onClick={() => document.getElementById('download-section')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-[#003b9c] text-white px-5 py-2 rounded-full font-medium text-sm hover:opacity-90 transition-opacity shadow-sm"
+              className="bg-[#003b9c] text-white px-6 py-2.5 rounded-full font-bold text-base hover:opacity-90 transition-opacity shadow-sm"
             >
               Download Sekarang
             </button>
@@ -202,14 +202,14 @@ export default function App() {
                 href="https://play.google.com/store"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-[#003b9c] text-white px-3 py-2 rounded-xl font-semibold hover:scale-105 transition-transform shadow-lg shadow-blue-200/50"
+                className="flex items-center gap-3 bg-[#003b9c] text-white px-5 py-3 rounded-2xl font-bold hover:scale-105 transition-transform shadow-lg shadow-blue-200/50"
               >
                 <div className="p-0.5 rounded-lg">
-                  <img src="/lpremitgo/playstore.png" alt="Play Store" className="w-5 h-5 object-contain" />
+                  <img src="/lpremitgo/playstore.png" alt="Play Store" className="w-7 h-7 object-contain" />
                 </div>
                 <div className="text-left font-sans">
-                  <p className="text-[8px] uppercase opacity-75 leading-none mb-0.5">Download di</p>
-                  <p className="text-xs leading-none">Google Play</p>
+                  <p className="text-[10px] uppercase opacity-75 leading-none mb-1">Download di</p>
+                  <p className="text-base leading-none">Google Play</p>
                 </div>
               </a>
 
@@ -217,14 +217,14 @@ export default function App() {
                 href="https://apps.apple.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-slate-900 text-white px-3 py-2 rounded-xl font-semibold hover:scale-105 transition-transform shadow-lg shadow-slate-900/10"
+                className="flex items-center gap-3 bg-slate-900 text-white px-5 py-3 rounded-2xl font-bold hover:scale-105 transition-transform shadow-lg shadow-slate-900/10"
               >
                 <div className="p-0.5 rounded-lg">
-                  <img src="/lpremitgo/appstore.png" alt="App Store" className="w-5 h-5 object-contain" />
+                  <img src="/lpremitgo/appstore.png" alt="App Store" className="w-7 h-7 object-contain" />
                 </div>
                 <div className="text-left font-sans">
-                  <p className="text-[8px] uppercase opacity-75 leading-none mb-0.5">Download di</p>
-                  <p className="text-xs leading-none">App Store</p>
+                  <p className="text-[10px] uppercase opacity-75 leading-none mb-1">Download di</p>
+                  <p className="text-base leading-none">App Store</p>
                 </div>
               </a>
             </div>
@@ -489,14 +489,14 @@ export default function App() {
                   href="https://play.google.com/store"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 bg-[#003b9c] text-white px-6 py-3 rounded-xl font-bold hover:scale-105 transition-transform"
+                  className="flex items-center gap-4 bg-[#003b9c] text-white px-8 py-4 rounded-2xl font-bold hover:scale-105 transition-transform"
                 >
                   <div className="p-0.5 rounded-lg">
-                    <img src="/lpremitgo/playstore.png" alt="Play Store" className="w-6 h-6 object-contain" />
+                    <img src="/lpremitgo/playstore.png" alt="Play Store" className="w-8 h-8 object-contain" />
                   </div>
                   <div className="text-left">
-                    <p className="text-[10px] uppercase opacity-70 leading-none mb-1">Download di</p>
-                    <p className="text-base leading-none">Google Play</p>
+                    <p className="text-[11px] uppercase opacity-70 leading-none mb-1.5">Download di</p>
+                    <p className="text-xl leading-none">Google Play</p>
                   </div>
                 </a>
 
@@ -504,14 +504,14 @@ export default function App() {
                   href="https://apps.apple.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 bg-slate-800 border border-slate-700 text-white px-6 py-3 rounded-xl font-bold hover:scale-105 transition-transform"
+                  className="flex items-center gap-4 bg-slate-800 border border-slate-700 text-white px-8 py-4 rounded-2xl font-bold hover:scale-105 transition-transform"
                 >
                   <div className="p-0.5 rounded-lg">
-                    <img src="/lpremitgo/appstore.png" alt="App Store" className="w-6 h-6 object-contain" />
+                    <img src="/lpremitgo/appstore.png" alt="App Store" className="w-8 h-8 object-contain" />
                   </div>
                   <div className="text-left">
-                    <p className="text-[10px] uppercase opacity-70 leading-none mb-1">Download di</p>
-                    <p className="text-base leading-none">App Store</p>
+                    <p className="text-[11px] uppercase opacity-70 leading-none mb-1.5">Download di</p>
+                    <p className="text-xl leading-none">App Store</p>
                   </div>
                 </a>
               </div>
@@ -671,24 +671,24 @@ export default function App() {
               50.000+ PMI sudah membuktikan. Download sekarang, gratis.
             </p>
 
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
-              <button className="flex items-center gap-3 bg-[#003b9c] text-white px-8 py-3.5 rounded-2xl font-bold hover:scale-105 transition-transform">
+            <div className="flex flex-wrap justify-center gap-6 mb-12">
+              <button className="flex items-center gap-4 bg-[#003b9c] text-white px-10 py-5 rounded-[2rem] font-bold hover:scale-105 transition-transform shadow-2xl shadow-blue-500/20">
                 <div className="p-0.5 rounded-lg">
-                  <img src="/lpremitgo/playstore.png" alt="Play Store" className="w-6 h-6 object-contain" />
+                  <img src="/lpremitgo/playstore.png" alt="Play Store" className="w-9 h-9 object-contain" />
                 </div>
                 <div className="text-left">
-                  <p className="text-[10px] uppercase opacity-70 leading-none mb-1">Download di</p>
-                  <p className="text-lg leading-none">Google Play</p>
+                  <p className="text-xs uppercase opacity-70 leading-none mb-1.5">Download di</p>
+                  <p className="text-2xl leading-none">Google Play</p>
                 </div>
               </button>
 
-              <button className="flex items-center gap-3 bg-slate-800 border border-slate-700 text-white px-8 py-3.5 rounded-2xl font-bold hover:scale-105 transition-transform">
+              <button className="flex items-center gap-4 bg-slate-800 border border-slate-700 text-white px-10 py-5 rounded-[2rem] font-bold hover:scale-105 transition-transform shadow-2xl shadow-slate-900/50">
                 <div className="p-0.5 rounded-lg">
-                  <img src="/lpremitgo/appstore.png" alt="App Store" className="w-6 h-6 object-contain" />
+                  <img src="/lpremitgo/appstore.png" alt="App Store" className="w-9 h-9 object-contain" />
                 </div>
                 <div className="text-left">
-                  <p className="text-[10px] uppercase opacity-70 leading-none mb-1">Download di</p>
-                  <p className="text-lg leading-none">App Store</p>
+                  <p className="text-xs uppercase opacity-70 leading-none mb-1.5">Download di</p>
+                  <p className="text-2xl leading-none">App Store</p>
                 </div>
               </button>
             </div>
