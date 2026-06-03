@@ -280,7 +280,18 @@ export default function App() {
               Kenapa Ribuan PMI di Hong Kong Pindah ke remit.go?
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            autoplay={{ delay: 4000, disableOnInteraction: false }}
+            pagination={{ clickable: true }}
+            spaceBetween={16}
+            slidesPerView={1.15}
+            centeredSlides={true}
+            breakpoints={{
+              768: { slidesPerView: 3, centeredSlides: false, spaceBetween: 24 },
+            }}
+            className="w-full pb-12"
+          >
             {[
               {
                 icon: <Zap className="w-8 h-8 text-[#003b9c]" />,
@@ -298,22 +309,23 @@ export default function App() {
                 desc: "Kirim langsung ke BRI, Mandiri, BCA, atau E-Wallet favorit seperti Dana, OVO, dan GoPay secara instan."
               }
             ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-white p-8 rounded-3xl border border-slate-100 hover:shadow-xl transition-shadow group"
-              >
-                <div className="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  {item.icon}
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-[--color-bri-blue]">{item.title}</h3>
-                <p className="text-slate-600 leading-relaxed">{item.desc}</p>
-              </motion.div>
+              <SwiperSlide key={i}>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="bg-white p-8 rounded-3xl border border-slate-100 hover:shadow-xl transition-shadow group h-full"
+                >
+                  <div className="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-[--color-bri-blue]">{item.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{item.desc}</p>
+                </motion.div>
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
         </Section>
       </div>
 
@@ -371,7 +383,8 @@ export default function App() {
 
       {/* Steps Section */}
       <Section>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        {/* Desktop: 2-column layout */}
+        <div className="hidden lg:grid grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -432,12 +445,58 @@ export default function App() {
             </div>
           </div>
         </div>
+
+        {/* Mobile: Swiper slides */}
+        <div className="lg:hidden">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-bold mb-2">Cuma 3 Menit, Uang Langsung Sampai</h2>
+            <p className="text-slate-600 text-sm">Lupakan cara lama yang bikin pusing. Ikuti langkah mudah ini:</p>
+          </div>
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            autoplay={{ delay: 4000, disableOnInteraction: false }}
+            pagination={{ clickable: true }}
+            spaceBetween={16}
+            slidesPerView={1.1}
+            centeredSlides={true}
+            className="w-full pb-12"
+          >
+            {[
+              {
+                icon: <Smartphone className="w-8 h-8 text-white" />,
+                title: "Download Aplikasi",
+                desc: "Tersedia di Google Play Store dan Apple App Store secara gratis."
+              },
+              {
+                icon: <UserCheck className="w-8 h-8 text-white" />,
+                title: "Daftar & Masukkan Data",
+                desc: "Cukup gunakan nomor telepon aktif dan masukkan data rekening tujuan."
+              },
+              {
+                icon: <ShieldCheck className="w-8 h-8 text-white" />,
+                title: "Verifikasi ID / Paspor",
+                desc: "Lakukan verifikasi identitas satu kali untuk keamanan transaksi maksimal."
+              }
+            ].map((step, i) => (
+              <SwiperSlide key={i}>
+                <div className="bg-white rounded-3xl border border-slate-100 p-8 text-center shadow-sm">
+                  <div className="w-14 h-14 rounded-2xl bg-[#003b9c] text-white flex items-center justify-center font-bold text-xl mx-auto mb-4">
+                    {i + 1}
+                  </div>
+                  <h3 className="text-lg font-bold mb-2 text-[--color-bri-blue]">{step.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{step.desc}</p>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </Section>
 
       {/* Trust Section */}
       <div className="bg-slate-900 text-white overflow-hidden">
         <Section>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Desktop layout */}
+          <div className="hidden lg:grid grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -448,7 +507,7 @@ export default function App() {
                 remit.go! merupakan partner resmi Bank Rakyat Indonesia (BRI) di Hong Kong. Kami menjamin setiap transaksi diawasi oleh otoritas keuangan kedua negara.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+              <div className="grid grid-cols-2 gap-4 mb-8">
                 {branches.map((branch, idx) => (
                   <div
                     key={idx}
@@ -551,6 +610,84 @@ export default function App() {
                 ))}
               </Swiper>
             </motion.div>
+          </div>
+
+          {/* Mobile layout */}
+          <div className="lg:hidden">
+            <h2 className="text-2xl font-bold mb-4 text-center">Aman & Terpercaya di Bawah Naungan BRI</h2>
+            <p className="text-slate-400 text-sm mb-6 text-center">
+              remit.go! merupakan partner resmi Bank Rakyat Indonesia (BRI) di Hong Kong.
+            </p>
+
+            {/* Branch cards as swiper */}
+            <Swiper
+              modules={[Autoplay, Pagination]}
+              autoplay={{ delay: 3500, disableOnInteraction: false }}
+              pagination={{ clickable: true }}
+              spaceBetween={12}
+              slidesPerView={1.15}
+              centeredSlides={true}
+              className="w-full pb-10 mb-6"
+            >
+              {branches.map((branch, idx) => (
+                <SwiperSlide key={idx}>
+                  <div className="bg-slate-800/60 border border-slate-700/40 p-5 rounded-2xl">
+                    <div className="flex items-center gap-2 mb-2 text-blue-400 font-bold">
+                      <Building2 className="w-4 h-4" />
+                      <span className="text-sm tracking-wide">{branch.name}</span>
+                    </div>
+                    <p className="text-xs text-slate-300 leading-relaxed font-light mb-3">
+                      {branch.address}
+                    </p>
+                    <div className="border-t border-slate-700/40 pt-2.5 flex justify-between text-[10px] text-slate-400 font-medium">
+                      <span>Tel: {branch.tel}</span>
+                      <span className="text-emerald-400">{branch.hours}</span>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            {/* Stats */}
+            <div className="flex items-center justify-center gap-8 mb-6">
+              <div className="text-center">
+                <p className="text-3xl font-bold text-blue-400">4.9/5</p>
+                <p className="text-[10px] text-slate-500 uppercase tracking-widest mt-1">Play Store Rating</p>
+              </div>
+              <div className="w-px h-10 bg-slate-700" />
+              <div className="text-center">
+                <p className="text-3xl font-bold text-blue-400">50K+</p>
+                <p className="text-[10px] text-slate-500 uppercase tracking-widest mt-1">PMI Aktif</p>
+              </div>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap justify-center gap-3">
+              <a
+                href="https://play.google.com/store"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 bg-[#003b9c] text-white px-5 py-3 rounded-xl font-bold hover:scale-105 transition-transform"
+              >
+                <img src="/lpremitgo/playstore.png" alt="Play Store" className="w-6 h-6 object-contain" />
+                <div className="text-left">
+                  <p className="text-[9px] uppercase opacity-70 leading-none mb-1">Download di</p>
+                  <p className="text-sm leading-none">Google Play</p>
+                </div>
+              </a>
+              <a
+                href="https://apps.apple.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 bg-slate-800 border border-slate-700 text-white px-5 py-3 rounded-xl font-bold hover:scale-105 transition-transform"
+              >
+                <img src="/lpremitgo/appstore.png" alt="App Store" className="w-6 h-6 object-contain" />
+                <div className="text-left">
+                  <p className="text-[9px] uppercase opacity-70 leading-none mb-1">Download di</p>
+                  <p className="text-sm leading-none">App Store</p>
+                </div>
+              </a>
+            </div>
           </div>
         </Section>
       </div>
