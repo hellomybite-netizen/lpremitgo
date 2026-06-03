@@ -313,57 +313,6 @@ export default function App() {
         </Section>
       </div>
 
-      {/* Mid CTA Section */}
-      <div className="bg-slate-50 pb-16">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-linear-to-br from-[#003b9c] via-[#0052cc] to-bri-blue rounded-3xl p-8 md:p-12 shadow-xl shadow-blue-900/20 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden border border-blue-400/20"
-          >
-            {/* Decorative background glow */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-32 h-32 bg-blue-300/10 blur-2xl rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" />
-
-            <div className="text-left relative z-10">
-              <h3 className="text-2xl font-bold text-white mb-2">Siap Kirim Uang Lebih Cepat & Hemat?</h3>
-              <p className="text-blue-100">Download aplikasi remit.go! sekarang gratis di smartphone Anda.</p>
-            </div>
-            <div className="flex flex-wrap gap-4 shrink-0 justify-center relative z-10">
-              <a
-                href="https://play.google.com/store"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 bg-white text-[#003b9c] px-6 py-3 rounded-xl font-bold hover:scale-105 transition-transform shadow-lg shadow-black/10 hover:shadow-white/10"
-              >
-                <div className="p-0.5 rounded-lg">
-                  <img src="/lpremitgo/playstore.png" alt="Play Store" className="w-6 h-6 object-contain" />
-                </div>
-                <div className="text-left font-sans">
-                  <p className="text-[10px] uppercase opacity-75 leading-none mb-1">Download di</p>
-                  <p className="text-base leading-none">Google Play</p>
-                </div>
-              </a>
-
-              <a
-                href="https://apps.apple.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 bg-white/10 border border-white/20 text-white px-6 py-3 rounded-xl font-bold hover:scale-105 transition-transform shadow-lg shadow-black/10 hover:bg-white/20"
-              >
-                <div className="p-0.5 rounded-lg">
-                  <img src="/lpremitgo/appstore.png" alt="App Store" className="w-6 h-6 object-contain" />
-                </div>
-                <div className="text-left font-sans">
-                  <p className="text-[10px] uppercase opacity-75 leading-none mb-1">Download di</p>
-                  <p className="text-base leading-none">App Store</p>
-                </div>
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </div>
 
       {/* Steps Section */}
       <Section>
