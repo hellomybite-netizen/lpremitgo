@@ -131,26 +131,25 @@ export default function App() {
     <div className="min-h-screen overflow-x-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 h-14 md:h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-2">
-              {/* Logo diletakkan langsung di depan teks */}
-              <img src="/lpremitgo/logobaru.png" alt="Logo" className="h-8 w-auto" />
+              <img src="/lpremitgo/logobaru.png" alt="Logo" className="h-6 md:h-8 w-auto" />
             </div>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 md:gap-4">
             <a 
               href="https://wa.me/85252920848"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#25D366] text-white px-6 py-2.5 rounded-full font-bold text-base hover:opacity-90 transition-opacity flex items-center gap-2.5 shadow-sm"
+              className="bg-[#25D366] text-white px-3 py-1.5 md:px-5 md:py-2 rounded-full font-semibold text-xs md:text-sm hover:opacity-90 transition-opacity flex items-center gap-1.5 md:gap-2 shadow-sm"
             >
-              <img src="/lpremitgo/wa.png" alt="WA" className="w-5 h-5 object-contain brightness-0 invert" />
+              <img src="/lpremitgo/wa.png" alt="WA" className="w-3.5 h-3.5 md:w-4 md:h-4 object-contain brightness-0 invert" />
               Tanya kami
             </a>
             <button 
               onClick={() => document.getElementById('download-section')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-[#003b9c] text-white px-6 py-2.5 rounded-full font-bold text-base hover:opacity-90 transition-opacity shadow-sm"
+              className="bg-[#003b9c] text-white px-3 py-1.5 md:px-5 md:py-2 rounded-full font-semibold text-xs md:text-sm hover:opacity-90 transition-opacity shadow-sm"
             >
               Download Sekarang
             </button>
@@ -166,48 +165,46 @@ export default function App() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h1 className="text-5xl md:text-6xl lg:text-[70px] font-bold leading-[1.1] mb-8">
+            <h1 className="text-3xl md:text-5xl lg:text-[70px] font-bold leading-[1.1] mb-6 md:mb-8">
               Kirim Uang ke Indonesia <span className="text-[#003b9c]">Gak Pake Ribet, Gak Pake Antre!</span>
             </h1>
 
 
-            <div className="space-y-4 mb-8">
+            <div className="space-y-2.5 md:space-y-4 mb-6 md:mb-8">
               {[
                 "Gak perlu nunggu hari libur",
                 "Gak perlu jauh-jauh ke toko fisik",
                 "Kurs tinggi & biaya murah"
               ].map((point, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center">
-                    <CheckCircle2 className="w-4 h-4 text-[#003b9c]" />
+                <div key={i} className="flex items-center gap-2.5 md:gap-3">
+                  <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-blue-50 flex items-center justify-center">
+                    <CheckCircle2 className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#003b9c]" />
                   </div>
-                  <span className="font-medium text-slate-700">{point}</span>
+                  <span className="font-medium text-slate-700 text-sm md:text-base">{point}</span>
                 </div>
               ))}
             </div>
 
-            <div className="flex flex-wrap gap-2 sm:gap-3 items-center mb-8">
+            <div className="flex flex-wrap gap-2 items-center mb-6 md:mb-8">
               <a
                 href="https://wa.me/85252920848"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 bg-[#25D366] text-white px-4 py-2.5 rounded-xl font-semibold text-sm shadow-lg shadow-green-200 hover:scale-105 transition-transform"
+                className="flex items-center gap-1.5 bg-[#25D366] text-white px-3 py-2 md:px-4 md:py-2.5 rounded-xl font-semibold text-xs md:text-sm shadow-lg shadow-green-200 hover:scale-105 transition-transform"
               >
-                <img src="/lpremitgo/wa.png" alt="WA" className="w-4 h-4 object-contain" /> Hubungi Admin CS
+                <img src="/lpremitgo/wa.png" alt="WA" className="w-3.5 h-3.5 md:w-4 md:h-4 object-contain" /> Hubungi Admin CS
               </a>
 
               <a
                 href="https://play.google.com/store"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 bg-[#003b9c] text-white px-5 py-3 rounded-2xl font-bold hover:scale-105 transition-transform shadow-lg shadow-blue-200/50"
+                className="flex items-center gap-2 bg-[#003b9c] text-white px-3 py-2 md:px-5 md:py-3 rounded-xl md:rounded-2xl font-bold hover:scale-105 transition-transform shadow-lg shadow-blue-200/50"
               >
-                <div className="p-0.5 rounded-lg">
-                  <img src="/lpremitgo/playstore.png" alt="Play Store" className="w-7 h-7 object-contain" />
-                </div>
+                <img src="/lpremitgo/playstore.png" alt="Play Store" className="w-5 h-5 md:w-6 md:h-6 object-contain" />
                 <div className="text-left font-sans">
-                  <p className="text-[10px] uppercase opacity-75 leading-none mb-1">Download di</p>
-                  <p className="text-base leading-none">Google Play</p>
+                  <p className="text-[8px] md:text-[10px] uppercase opacity-75 leading-none mb-0.5">Download di</p>
+                  <p className="text-xs md:text-sm leading-none">Google Play</p>
                 </div>
               </a>
 
@@ -215,14 +212,12 @@ export default function App() {
                 href="https://apps.apple.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 bg-slate-900 text-white px-5 py-3 rounded-2xl font-bold hover:scale-105 transition-transform shadow-lg shadow-slate-900/10"
+                className="flex items-center gap-2 bg-slate-900 text-white px-3 py-2 md:px-5 md:py-3 rounded-xl md:rounded-2xl font-bold hover:scale-105 transition-transform shadow-lg shadow-slate-900/10"
               >
-                <div className="p-0.5 rounded-lg">
-                  <img src="/lpremitgo/appstore.png" alt="App Store" className="w-7 h-7 object-contain" />
-                </div>
+                <img src="/lpremitgo/appstore.png" alt="App Store" className="w-5 h-5 md:w-6 md:h-6 object-contain" />
                 <div className="text-left font-sans">
-                  <p className="text-[10px] uppercase opacity-75 leading-none mb-1">Download di</p>
-                  <p className="text-base leading-none">App Store</p>
+                  <p className="text-[8px] md:text-[10px] uppercase opacity-75 leading-none mb-0.5">Download di</p>
+                  <p className="text-xs md:text-sm leading-none">App Store</p>
                 </div>
               </a>
             </div>
