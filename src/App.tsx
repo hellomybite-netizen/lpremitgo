@@ -169,9 +169,7 @@ export default function App() {
             <h1 className="text-5xl md:text-6xl lg:text-[70px] font-bold leading-[1.1] mb-8">
               Kirim Uang ke Indonesia <span className="text-[#003b9c]">Gak Pake Ribet, Gak Pake Antre!</span>
             </h1>
-            <p className="text-lg text-slate-600 mb-8 max-w-lg">
-              Capek kerja seminggu, masa waktu libur habis cuma buat antre kirim uang? Di <span className="font-semibold text-[--color-bri-blue]">remit.go!</span>, kirim uang semudah kirim pesan. Kurs Tinggi, Biaya Murah, dan Pasti Sampai!
-            </p>
+
 
             <div className="space-y-4 mb-8">
               {[
