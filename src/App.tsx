@@ -774,6 +774,39 @@ export default function App() {
         </div>
       </div>
       {/* --- End Section Slider --- */}
+
+      {/* Video Section */}
+      <section className="bg-slate-900 py-20 px-6 border-y border-slate-800">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="inline-block bg-blue-500/10 text-blue-400 font-bold text-xs uppercase px-4 py-1.5 rounded-full mb-4">
+              Tutorial & Panduan
+            </div>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 md:mb-6">
+              Lebih Dekat dengan remit.go!
+            </h2>
+            <p className="text-slate-400 text-sm md:text-base mb-8 md:mb-12">
+              Tonton video singkat berikut untuk melihat betapa mudahnya mengirim uang ke Indonesia menggunakan aplikasi remit.go!
+            </p>
+
+            <div className="relative w-full aspect-video rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/20 border border-slate-700 bg-slate-800">
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/lEgz5TlkwTc"
+                title="Tutorial Menggunakan remit.go!"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Final CTA Section */}
       <div id="download-section" className="bg-[#0a0f18] py-24 relative overflow-hidden">
         {/* Background Watermark */}
