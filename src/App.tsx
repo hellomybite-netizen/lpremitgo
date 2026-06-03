@@ -674,70 +674,27 @@ export default function App() {
             slidesPerView={1} // Default HP: Tampil 1
             breakpoints={{
               // Layar Tablet/Laptop ke atas
-              1024: { slidesPerView: 4 }, // Tampil 4
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 }, // Tampil 3
             }}
             className="w-full pb-14" // Tambah padding bawah untuk titik pagination
           >
 
-            {/* List 10 Banner - Ganti src dengan file Anda di folder public */}
             <SwiperSlide>
               <div className="aspect-3/4 w-full rounded-2xl overflow-hidden shadow-lg">
-                <img src="/lpremitgo/1.png" className="w-full h-full object-cover" alt="Banner 1" />
+                <img src="/lpremitgo/promo1.png" className="w-full h-full object-cover" alt="Promo 1" />
               </div>
             </SwiperSlide>
 
             <SwiperSlide>
               <div className="aspect-3/4 w-full rounded-2xl overflow-hidden shadow-lg">
-                <img src="/lpremitgo/2.png" className="w-full h-full object-cover" alt="Banner 2" />
+                <img src="/lpremitgo/promo2.png" className="w-full h-full object-cover" alt="Promo 2" />
               </div>
             </SwiperSlide>
 
             <SwiperSlide>
               <div className="aspect-3/4 w-full rounded-2xl overflow-hidden shadow-lg">
-                <img src="/lpremitgo/3.png" className="w-full h-full object-cover" alt="Banner 3" />
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <div className="aspect-3/4 w-full rounded-2xl overflow-hidden shadow-lg">
-                <img src="/lpremitgo/4.png" className="w-full h-full object-cover" alt="Banner 4" />
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <div className="aspect-3/4 w-full rounded-2xl overflow-hidden shadow-lg">
-                <img src="/lpremitgo/5.png" className="w-full h-full object-cover" alt="Banner 4" />
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <div className="aspect-3/4 w-full rounded-2xl overflow-hidden shadow-lg">
-                <img src="/lpremitgo/6.png" className="w-full h-full object-cover" alt="Banner 4" />
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <div className="aspect-3/4 w-full rounded-2xl overflow-hidden shadow-lg">
-                <img src="/lpremitgo/7.png" className="w-full h-full object-cover" alt="Banner 4" />
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <div className="aspect-3/4 w-full rounded-2xl overflow-hidden shadow-lg">
-                <img src="/lpremitgo/8.png" className="w-full h-full object-cover" alt="Banner 4" />
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <div className="aspect-3/4 w-full rounded-2xl overflow-hidden shadow-lg">
-                <img src="/lpremitgo/9.png" className="w-full h-full object-cover" alt="Banner 4" />
-              </div>
-            </SwiperSlide>
-
-            {/* Lanjutkan sampai Banner 10 */}
-            <SwiperSlide>
-              <div className="aspect-3/4 w-full rounded-2xl overflow-hidden shadow-lg">
-                <img src="/lpremitgo/10.png" className="w-full h-full object-cover" alt="Banner 10" />
+                <img src="/lpremitgo/promo3.png" className="w-full h-full object-cover" alt="Promo 3" />
               </div>
             </SwiperSlide>
 
