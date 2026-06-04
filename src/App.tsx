@@ -25,7 +25,7 @@ import 'swiper/css/pagination';
 const BRI_BLUE = "#0157e3";
 
 const Section = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <section className={`py-16 md:py-24 px-6 md:px-12 max-w-7xl mx-auto ${className}`}>
+  <section className={`py-10 md:py-24 px-6 md:px-12 max-w-7xl mx-auto ${className}`}>
     {children}
   </section>
 );
@@ -259,8 +259,8 @@ export default function App() {
       {/* USP Section */}
       <div className="bg-slate-50">
         <Section>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="text-center mb-6 md:mb-16">
+            <h2 className="text-2xl md:text-4xl font-bold mb-4">
               Kenapa Ribuan PMI di Hong Kong Pindah ke remit.go?
             </h2>
           </div>
@@ -299,7 +299,7 @@ export default function App() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="bg-white p-8 rounded-3xl border border-slate-100 hover:shadow-xl transition-shadow group h-full"
+                  className="bg-white p-5 md:p-8 rounded-3xl border border-slate-100 hover:shadow-xl transition-shadow group h-full"
                 >
                   <div className="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                     {item.icon}
