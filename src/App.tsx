@@ -22,6 +22,21 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 
+declare global {
+  interface Window {
+    gtag: (...args: any[]) => void;
+  }
+}
+
+const trackEvent = (action: string, category: string, label: string) => {
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', action, {
+      event_category: category,
+      event_label: label,
+    });
+  }
+};
+
 const BRI_BLUE = "#0157e3";
 
 const Section = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
@@ -142,13 +157,14 @@ export default function App() {
               href="https://wa.me/85252920848"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackEvent('click', 'whatsapp', 'nav_tanya_kami')}
               className="bg-[#25D366] text-white px-3 py-1.5 md:px-5 md:py-2 rounded-full font-semibold text-xs md:text-sm hover:opacity-90 transition-opacity flex items-center gap-1.5 md:gap-2 shadow-sm"
             >
               <img src="/lpremitgo/wa.png" alt="WA" className="w-3.5 h-3.5 md:w-4 md:h-4 object-contain brightness-0 invert" />
               Tanya kami
             </a>
             <button 
-              onClick={() => document.getElementById('download-section')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => { trackEvent('click', 'download', 'nav_download_sekarang'); document.getElementById('download-section')?.scrollIntoView({ behavior: 'smooth' }); }}
               className="bg-[#003b9c] text-white px-3 py-1.5 md:px-5 md:py-2 rounded-full font-semibold text-xs md:text-sm hover:opacity-90 transition-opacity shadow-sm"
             >
               Download Sekarang
@@ -190,6 +206,7 @@ export default function App() {
                 href="https://play.google.com/store"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackEvent('click', 'download', 'hero_google_play')}
                 className="flex items-center gap-2 bg-[#003b9c] text-white px-3 py-2 md:px-5 md:py-3 rounded-xl md:rounded-2xl font-bold hover:scale-105 transition-transform shadow-lg shadow-blue-200/50"
               >
                 <img src="/lpremitgo/playstore.png" alt="Play Store" className="w-5 h-5 md:w-6 md:h-6 object-contain" />
@@ -203,6 +220,7 @@ export default function App() {
                 href="https://apps.apple.com"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackEvent('click', 'download', 'hero_app_store')}
                 className="flex items-center gap-2 bg-slate-900 text-white px-3 py-2 md:px-5 md:py-3 rounded-xl md:rounded-2xl font-bold hover:scale-105 transition-transform shadow-lg shadow-slate-900/10"
               >
                 <img src="/lpremitgo/appstore.png" alt="App Store" className="w-5 h-5 md:w-6 md:h-6 object-contain" />
@@ -481,6 +499,7 @@ export default function App() {
                   href="https://play.google.com/store"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackEvent('click', 'download', 'trust_google_play')}
                   className="flex items-center gap-4 bg-[#003b9c] text-white px-8 py-4 rounded-2xl font-bold hover:scale-105 transition-transform"
                 >
                   <div className="p-0.5 rounded-lg">
@@ -496,6 +515,7 @@ export default function App() {
                   href="https://apps.apple.com"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackEvent('click', 'download', 'trust_app_store')}
                   className="flex items-center gap-4 bg-slate-800 border border-slate-700 text-white px-8 py-4 rounded-2xl font-bold hover:scale-105 transition-transform"
                 >
                   <div className="p-0.5 rounded-lg">
@@ -600,6 +620,7 @@ export default function App() {
                 href="https://play.google.com/store"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackEvent('click', 'download', 'trust_mobile_google_play')}
                 className="flex items-center gap-3 bg-[#003b9c] text-white px-5 py-3 rounded-xl font-bold hover:scale-105 transition-transform"
               >
                 <img src="/lpremitgo/playstore.png" alt="Play Store" className="w-6 h-6 object-contain" />
@@ -612,6 +633,7 @@ export default function App() {
                 href="https://apps.apple.com"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackEvent('click', 'download', 'trust_mobile_app_store')}
                 className="flex items-center gap-3 bg-slate-800 border border-slate-700 text-white px-5 py-3 rounded-xl font-bold hover:scale-105 transition-transform"
               >
                 <img src="/lpremitgo/appstore.png" alt="App Store" className="w-6 h-6 object-contain" />
@@ -732,7 +754,7 @@ export default function App() {
             </p>
 
             <div className="flex flex-wrap justify-center gap-6 mb-12">
-              <button className="flex items-center gap-4 bg-[#003b9c] text-white px-10 py-5 rounded-[2rem] font-bold hover:scale-105 transition-transform shadow-2xl shadow-blue-500/20">
+              <button onClick={() => trackEvent('click', 'download', 'cta_google_play')} className="flex items-center gap-4 bg-[#003b9c] text-white px-10 py-5 rounded-[2rem] font-bold hover:scale-105 transition-transform shadow-2xl shadow-blue-500/20">
                 <div className="p-0.5 rounded-lg">
                   <img src="/lpremitgo/playstore.png" alt="Play Store" className="w-9 h-9 object-contain" />
                 </div>
@@ -742,7 +764,7 @@ export default function App() {
                 </div>
               </button>
 
-              <button className="flex items-center gap-4 bg-slate-800 border border-slate-700 text-white px-10 py-5 rounded-[2rem] font-bold hover:scale-105 transition-transform shadow-2xl shadow-slate-900/50">
+              <button onClick={() => trackEvent('click', 'download', 'cta_app_store')} className="flex items-center gap-4 bg-slate-800 border border-slate-700 text-white px-10 py-5 rounded-[2rem] font-bold hover:scale-105 transition-transform shadow-2xl shadow-slate-900/50">
                 <div className="p-0.5 rounded-lg">
                   <img src="/lpremitgo/appstore.png" alt="App Store" className="w-9 h-9 object-contain" />
                 </div>
@@ -757,6 +779,7 @@ export default function App() {
               href="https://wa.me/85252920848"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackEvent('click', 'whatsapp', 'cta_chat_whatsapp')}
               className="inline-flex items-center gap-3 text-slate-300 hover:text-white transition-colors group"
             >
               <div className="w-10 h-10 rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-transform">
