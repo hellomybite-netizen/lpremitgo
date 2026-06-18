@@ -37,6 +37,8 @@ const trackEvent = (action: string, category: string, label: string) => {
   }
 };
 
+const BASE_PATH = import.meta.env.BASE_URL;
+
 const BRI_BLUE = "#0157e3";
 
 const Section = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
@@ -92,22 +94,22 @@ const testimonials = [
 
 const trustSlides = [
   {
-    image: "/lpremitgo/long.jpg",
+    image: `${BASE_PATH}long.jpg`,
     title: "Cabang Yuen Long",
     desc: "Shop 3, G/F, Yuen Long Commercial Centre, 18-24 Kau Yuk Road, Yuen Long, Hong Kong"
   },
   {
-    image: "/lpremitgo/maibranch.jpg",
+    image: `${BASE_PATH}maibranch.jpg`,
     title: "Pusat Causeway Bay",
     desc: "Shop B, G/F, Keswick Mansion, 57 Keswick Street, Causeway Bay, Hong Kong"
   },
   {
-    image: "/lpremitgo/mongkok.jpg",
+    image: `${BASE_PATH}mongkok.jpg`,
     title: "Cabang Mong Kok",
     desc: "Shop A, G/F, 78 Argyle Street, Mong Kok, Kowloon, Hong Kong"
   },
   {
-    image: "/lpremitgo/wan.jpg",
+    image: `${BASE_PATH}wan.jpg`,
     title: "Cabang Tsuen Wan",
     desc: "G/F, 123 Sha Tsui Road, Tsuen Wan, New Territories, Hong Kong"
   },
@@ -149,7 +151,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 md:px-6 h-14 md:h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-2">
-              <img src="/lpremitgo/logobaru.png" alt="Logo" className="h-6 md:h-8 w-auto" />
+              <img src={`${BASE_PATH}logobaru.png`} alt="Logo" className="h-6 md:h-8 w-auto" />
             </div>
           </div>
           <div className="flex items-center gap-2 md:gap-4">
@@ -160,7 +162,7 @@ export default function App() {
               onClick={() => trackEvent('click', 'whatsapp', 'nav_tanya_kami')}
               className="bg-[#25D366] text-white px-3 py-1.5 md:px-5 md:py-2 rounded-full font-semibold text-xs md:text-sm hover:opacity-90 transition-opacity flex items-center gap-1.5 md:gap-2 shadow-sm"
             >
-              <img src="/lpremitgo/wa.png" alt="WA" className="w-3.5 h-3.5 md:w-4 md:h-4 object-contain brightness-0 invert" />
+              <img src={`${BASE_PATH}wa.png`} alt="WA" className="w-3.5 h-3.5 md:w-4 md:h-4 object-contain brightness-0 invert" />
               Tanya kami
             </a>
             <button 
@@ -209,7 +211,7 @@ export default function App() {
                 onClick={() => trackEvent('click', 'download', 'hero_google_play')}
                 className="flex items-center gap-2 bg-[#003b9c] text-white px-3 py-2 md:px-5 md:py-3 rounded-xl md:rounded-2xl font-bold hover:scale-105 transition-transform shadow-lg shadow-blue-200/50"
               >
-                <img src="/lpremitgo/playstore.png" alt="Play Store" className="w-5 h-5 md:w-6 md:h-6 object-contain" />
+                <img src={`${BASE_PATH}playstore.png`} alt="Play Store" className="w-5 h-5 md:w-6 md:h-6 object-contain" />
                 <div className="text-left font-sans">
                   <p className="text-[8px] md:text-[10px] uppercase opacity-75 leading-none mb-0.5">Download di</p>
                   <p className="text-xs md:text-sm leading-none">Google Play</p>
@@ -223,7 +225,7 @@ export default function App() {
                 onClick={() => trackEvent('click', 'download', 'hero_app_store')}
                 className="flex items-center gap-2 bg-slate-900 text-white px-3 py-2 md:px-5 md:py-3 rounded-xl md:rounded-2xl font-bold hover:scale-105 transition-transform shadow-lg shadow-slate-900/10"
               >
-                <img src="/lpremitgo/appstore.png" alt="App Store" className="w-5 h-5 md:w-6 md:h-6 object-contain" />
+                <img src={`${BASE_PATH}appstore.png`} alt="App Store" className="w-5 h-5 md:w-6 md:h-6 object-contain" />
                 <div className="text-left font-sans">
                   <p className="text-[8px] md:text-[10px] uppercase opacity-75 leading-none mb-0.5">Download di</p>
                   <p className="text-xs md:text-sm leading-none">App Store</p>
@@ -263,7 +265,7 @@ export default function App() {
           >
             <div className="absolute -inset-10 bg-blue-400/10 blur-[100px] rounded-full -z-10" />
             <img
-              src="/lpremitgo/imagehero.png"
+              src={`${BASE_PATH}imagehero.png`}
               alt="Remit.go App Mockup"
               className="w-full h-auto drop-shadow-2xl"
               referrerPolicy="no-referrer"
@@ -503,7 +505,7 @@ export default function App() {
                   className="flex items-center gap-4 bg-[#003b9c] text-white px-8 py-4 rounded-2xl font-bold hover:scale-105 transition-transform"
                 >
                   <div className="p-0.5 rounded-lg">
-                    <img src="/lpremitgo/playstore.png" alt="Play Store" className="w-8 h-8 object-contain" />
+                    <img src={`${BASE_PATH}playstore.png`} alt="Play Store" className="w-8 h-8 object-contain" />
                   </div>
                   <div className="text-left">
                     <p className="text-[11px] uppercase opacity-70 leading-none mb-1.5">Download di</p>
@@ -519,7 +521,7 @@ export default function App() {
                   className="flex items-center gap-4 bg-slate-800 border border-slate-700 text-white px-8 py-4 rounded-2xl font-bold hover:scale-105 transition-transform"
                 >
                   <div className="p-0.5 rounded-lg">
-                    <img src="/lpremitgo/appstore.png" alt="App Store" className="w-8 h-8 object-contain" />
+                    <img src={`${BASE_PATH}appstore.png`} alt="App Store" className="w-8 h-8 object-contain" />
                   </div>
                   <div className="text-left">
                     <p className="text-[11px] uppercase opacity-70 leading-none mb-1.5">Download di</p>
@@ -623,7 +625,7 @@ export default function App() {
                 onClick={() => trackEvent('click', 'download', 'trust_mobile_google_play')}
                 className="flex items-center gap-3 bg-[#003b9c] text-white px-5 py-3 rounded-xl font-bold hover:scale-105 transition-transform"
               >
-                <img src="/lpremitgo/playstore.png" alt="Play Store" className="w-6 h-6 object-contain" />
+                <img src={`${BASE_PATH}playstore.png`} alt="Play Store" className="w-6 h-6 object-contain" />
                 <div className="text-left">
                   <p className="text-[9px] uppercase opacity-70 leading-none mb-1">Download di</p>
                   <p className="text-sm leading-none">Google Play</p>
@@ -636,7 +638,7 @@ export default function App() {
                 onClick={() => trackEvent('click', 'download', 'trust_mobile_app_store')}
                 className="flex items-center gap-3 bg-slate-800 border border-slate-700 text-white px-5 py-3 rounded-xl font-bold hover:scale-105 transition-transform"
               >
-                <img src="/lpremitgo/appstore.png" alt="App Store" className="w-6 h-6 object-contain" />
+                <img src={`${BASE_PATH}appstore.png`} alt="App Store" className="w-6 h-6 object-contain" />
                 <div className="text-left">
                   <p className="text-[9px] uppercase opacity-70 leading-none mb-1">Download di</p>
                   <p className="text-sm leading-none">App Store</p>
@@ -704,19 +706,19 @@ export default function App() {
 
             <SwiperSlide>
               <div className="aspect-3/4 w-full rounded-2xl overflow-hidden shadow-lg">
-                <img src="/lpremitgo/promo1.png" className="w-full h-full object-cover" alt="Promo 1" />
+                <img src={`${BASE_PATH}promo1.png`} className="w-full h-full object-cover" alt="Promo 1" />
               </div>
             </SwiperSlide>
 
             <SwiperSlide>
               <div className="aspect-3/4 w-full rounded-2xl overflow-hidden shadow-lg">
-                <img src="/lpremitgo/promo2.png" className="w-full h-full object-cover" alt="Promo 2" />
+                <img src={`${BASE_PATH}promo2.png`} className="w-full h-full object-cover" alt="Promo 2" />
               </div>
             </SwiperSlide>
 
             <SwiperSlide>
               <div className="aspect-3/4 w-full rounded-2xl overflow-hidden shadow-lg">
-                <img src="/lpremitgo/promo3.png" className="w-full h-full object-cover" alt="Promo 3" />
+                <img src={`${BASE_PATH}promo3.png`} className="w-full h-full object-cover" alt="Promo 3" />
               </div>
             </SwiperSlide>
 
@@ -756,7 +758,7 @@ export default function App() {
             <div className="flex flex-wrap justify-center gap-6 mb-12">
               <button onClick={() => trackEvent('click', 'download', 'cta_google_play')} className="flex items-center gap-4 bg-[#003b9c] text-white px-10 py-5 rounded-[2rem] font-bold hover:scale-105 transition-transform shadow-2xl shadow-blue-500/20">
                 <div className="p-0.5 rounded-lg">
-                  <img src="/lpremitgo/playstore.png" alt="Play Store" className="w-9 h-9 object-contain" />
+                  <img src={`${BASE_PATH}playstore.png`} alt="Play Store" className="w-9 h-9 object-contain" />
                 </div>
                 <div className="text-left">
                   <p className="text-xs uppercase opacity-70 leading-none mb-1.5">Download di</p>
@@ -766,7 +768,7 @@ export default function App() {
 
               <button onClick={() => trackEvent('click', 'download', 'cta_app_store')} className="flex items-center gap-4 bg-slate-800 border border-slate-700 text-white px-10 py-5 rounded-[2rem] font-bold hover:scale-105 transition-transform shadow-2xl shadow-slate-900/50">
                 <div className="p-0.5 rounded-lg">
-                  <img src="/lpremitgo/appstore.png" alt="App Store" className="w-9 h-9 object-contain" />
+                  <img src={`${BASE_PATH}appstore.png`} alt="App Store" className="w-9 h-9 object-contain" />
                 </div>
                 <div className="text-left">
                   <p className="text-xs uppercase opacity-70 leading-none mb-1.5">Download di</p>
@@ -783,7 +785,7 @@ export default function App() {
               className="inline-flex items-center gap-3 text-slate-300 hover:text-white transition-colors group"
             >
               <div className="w-10 h-10 rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-transform">
-                <img src="/lpremitgo/wa.png" alt="WA" className="w-10 h-10 object-contain" />
+                <img src={`${BASE_PATH}wa.png`} alt="WA" className="w-10 h-10 object-contain" />
               </div>
               <span className="font-medium">Ada pertanyaan? Chat via WhatsApp</span>
             </a>
@@ -797,7 +799,7 @@ export default function App() {
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-2">
               {/* Logo diletakkan langsung di depan teks */}
-              <img src="/lpremitgo/logobaru.png" alt="Logo" className="h-8 w-auto" />
+              <img src={`${BASE_PATH}logobaru.png`} alt="Logo" className="h-8 w-auto" />
             </div>
           </div>
           <p className="text-slate-500 text-sm">© 2026 remit.go! by BRI. Licensed MSO 19-03-02451.</p>
