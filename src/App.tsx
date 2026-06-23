@@ -205,7 +205,7 @@ export default function App() {
 
             <div className="flex flex-wrap gap-2 items-center mb-6 md:mb-8">
               <a
-                href="https://play.google.com/store"
+                href="https://play.google.com/store/apps/details?id=com.brchk.remitgo&pcampaignid=web_share"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackEvent('click', 'download', 'hero_google_play')}
@@ -219,7 +219,7 @@ export default function App() {
               </a>
 
               <a
-                href="https://apps.apple.com"
+                href="https://apps.apple.com/hk/app/remit-go-bri-global-financial/id6744429247?l=en-GB"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackEvent('click', 'download', 'hero_app_store')}
@@ -498,7 +498,7 @@ export default function App() {
               {/* CTA Download App Buttons */}
               <div className="flex flex-wrap gap-4 mt-10">
                 <a
-                  href="https://play.google.com/store"
+                  href="https://play.google.com/store/apps/details?id=com.brchk.remitgo&pcampaignid=web_share"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackEvent('click', 'download', 'trust_google_play')}
@@ -514,7 +514,7 @@ export default function App() {
                 </a>
 
                 <a
-                  href="https://apps.apple.com"
+                  href="https://apps.apple.com/hk/app/remit-go-bri-global-financial/id6744429247?l=en-GB"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackEvent('click', 'download', 'trust_app_store')}
@@ -619,7 +619,7 @@ export default function App() {
             {/* CTA Buttons */}
             <div className="flex flex-wrap justify-center gap-3">
               <a
-                href="https://play.google.com/store"
+                href="https://play.google.com/store/apps/details?id=com.brchk.remitgo&pcampaignid=web_share"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackEvent('click', 'download', 'trust_mobile_google_play')}
@@ -632,7 +632,7 @@ export default function App() {
                 </div>
               </a>
               <a
-                href="https://apps.apple.com"
+                href="https://apps.apple.com/hk/app/remit-go-bri-global-financial/id6744429247?l=en-GB"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackEvent('click', 'download', 'trust_mobile_app_store')}
@@ -756,7 +756,7 @@ export default function App() {
             </p>
 
             <div className="flex flex-wrap justify-center gap-6 mb-12">
-              <button onClick={() => trackEvent('click', 'download', 'cta_google_play')} className="flex items-center gap-4 bg-[#003b9c] text-white px-10 py-5 rounded-[2rem] font-bold hover:scale-105 transition-transform shadow-2xl shadow-blue-500/20">
+              <a href="https://play.google.com/store/apps/details?id=com.brchk.remitgo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('click', 'download', 'cta_google_play')} className="flex items-center gap-4 bg-[#003b9c] text-white px-10 py-5 rounded-[2rem] font-bold hover:scale-105 transition-transform shadow-2xl shadow-blue-500/20">
                 <div className="p-0.5 rounded-lg">
                   <img src={`${BASE_PATH}playstore.png`} alt="Play Store" className="w-9 h-9 object-contain" />
                 </div>
@@ -764,9 +764,9 @@ export default function App() {
                   <p className="text-xs uppercase opacity-70 leading-none mb-1.5">Download di</p>
                   <p className="text-2xl leading-none">Google Play</p>
                 </div>
-              </button>
+              </a>
 
-              <button onClick={() => trackEvent('click', 'download', 'cta_app_store')} className="flex items-center gap-4 bg-slate-800 border border-slate-700 text-white px-10 py-5 rounded-[2rem] font-bold hover:scale-105 transition-transform shadow-2xl shadow-slate-900/50">
+              <a href="https://apps.apple.com/hk/app/remit-go-bri-global-financial/id6744429247?l=en-GB" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('click', 'download', 'cta_app_store')} className="flex items-center gap-4 bg-slate-800 border border-slate-700 text-white px-10 py-5 rounded-[2rem] font-bold hover:scale-105 transition-transform shadow-2xl shadow-slate-900/50">
                 <div className="p-0.5 rounded-lg">
                   <img src={`${BASE_PATH}appstore.png`} alt="App Store" className="w-9 h-9 object-contain" />
                 </div>
@@ -774,7 +774,7 @@ export default function App() {
                   <p className="text-xs uppercase opacity-70 leading-none mb-1.5">Download di</p>
                   <p className="text-2xl leading-none">App Store</p>
                 </div>
-              </button>
+              </a>
             </div>
 
             <a
