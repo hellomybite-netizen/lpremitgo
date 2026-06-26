@@ -25,6 +25,7 @@ import 'swiper/css/pagination';
 declare global {
   interface Window {
     gtag: (...args: any[]) => void;
+    fbq: (...args: any[]) => void;
   }
 }
 
@@ -52,6 +53,26 @@ const trackEvent = (action: string, category: string, label: string) => {
           item_category: category,
           quantity: 1,
         }],
+      });
+    }
+  }
+
+  // Meta Pixel events
+  if (typeof window.fbq === 'function') {
+    if (category === 'download') {
+      // Tombol Play Store / App Store → AddToCart
+      window.fbq('track', 'AddToCart', {
+        content_name: label,
+        content_category: category,
+        content_type: 'product',
+        value: 1.0,
+        currency: 'HKD',
+      });
+    } else if (category === 'whatsapp') {
+      // Tombol WA → Contact
+      window.fbq('track', 'Contact', {
+        content_name: label,
+        content_category: 'whatsapp',
       });
     }
   }
