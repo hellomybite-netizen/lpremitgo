@@ -30,10 +30,30 @@ declare global {
 
 const trackEvent = (action: string, category: string, label: string) => {
   if (typeof window.gtag === 'function') {
+    // GA4 event
     window.gtag('event', action, {
       event_category: category,
       event_label: label,
     });
+
+    // Google Ads: kirim event add_to_cart untuk semua tombol download & WA
+    if (category === 'download' || category === 'whatsapp') {
+      window.gtag('event', 'conversion', {
+        send_to: 'AW-17726263055',
+        value: 1.0,
+        currency: 'HKD',
+      });
+      window.gtag('event', 'add_to_cart', {
+        currency: 'HKD',
+        value: 1.0,
+        items: [{
+          item_id: label,
+          item_name: `${category}_${label}`,
+          item_category: category,
+          quantity: 1,
+        }],
+      });
+    }
   }
 };
 
