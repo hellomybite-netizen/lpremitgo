@@ -1,10 +1,8 @@
 #name: Deploy Vite site to Pages
 
 on:
-  push:
-    branches: ["main"]
   workflow_dispatch:
-
+  
 permissions:
   contents: read
   pages: write
@@ -15,28 +13,110 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-      - name: Set up Node
-        uses: actions/setup-node@v4
+        uses: actions/checkout@v6
+      - name: Set auth config dynamically
+        id: auth_config
+        run: |
+            echo "PROJECT_ID=${{ vars.PROD_GCP_PROJECT_ID }}" >> "$GITHUB_ENV"
+            echo "WORKLOAD_IDENTITY_PROVIDER=${{ vars.PROD_GCP_WORKLOAD_IDENTITY_PROVIDER }}" >> "$GITHUB_ENV"
+            echo "SERVICE_ACCOUNT=${{ vars.PROD_GCP_WORKLOAD_IDENTITY_PROVIDER_SA }}" >> "$GITHUB_ENV"
+            echo "GCP_ARTIFACT_REGISTRY_BASE=${{ vars.PROD_GCP_ARTIFACT_REGISTRY_BASE }}" >> "$GITHUB_ENV"
+            echo "IMAGE_TAG=${{ github.sha }}" >> "$GITHUB_ENV"
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Authenticate with Google Cloud
+        uses: google-github-actions/auth@v2
+        id: auth
         with:
-          node-version: 20
-          cache: 'npm'
-      - name: Install dependencies
-        run: npm install
-      - name: Build
-        run: npm run build
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './dist'
+          create_credentials_file: true
+          token_format: access_token
+          project_id: ${{ env.PROJECT_ID }}
+          workload_identity_provider: ${{ env.WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ env.SERVICE_ACCOUNT }}
+      
+      - name: Get Registry Host
+        id: get_registry
+        run: |
+          REGISTRY_HOST=$(echo "${{ env.GCP_ARTIFACT_REGISTRY_BASE }}" | cut -d'/' -f1)
+          echo "host=$REGISTRY_HOST" >> "$GITHUB_OUTPUT"
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Login to GAR
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ steps.get_registry.outputs.host }}
+          username: oauth2accesstoken
+          password: ${{ steps.auth.outputs.access_token }}
+
+      - name: Retreive service.yaml file
+        uses: actions/checkout@v6
+        with:
+          repository: ${{ github.repository_owner }}/devops
+          ref: v2
+          token: ${{ secrets.PAT }}
+          path: deployment
+          sparse-checkout: |
+            scripts/service.yaml
+            scripts/service-internal.yaml
+            scripts/process_yaml.py
+          sparse-checkout-cone-mode: false
+          fetch-depth: 1
+      - name: Get repo name
+        run: echo "REPO_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
+      - name: running docker build and push
+        run: |
+            docker build --build-arg GITHUB_TOKEN=${{ secrets.PAT }} --build-arg ENV_FILE=.env.prod -t ${{ env.GCP_ARTIFACT_REGISTRY_BASE }}/${{ env.REPO_NAME }}:${{ env.IMAGE_TAG }} .
+            docker push ${{ env.GCP_ARTIFACT_REGISTRY_BASE }}/${{ env.REPO_NAME }}:${{ env.IMAGE_TAG }}
+
+      - name: Check if Cloud Run Service Exists
+        id: check-service
+        run: |
+            set +e
+            SERVICE_NAME="${{ env.REPO_NAME }}"
+            gcloud run services describe $SERVICE_NAME \
+              --platform managed \
+              --region ${{ vars.GCP_REGION }} \
+              --project ${{ env.PROJECT_ID }} > /dev/null 2>&1
+            if [ $? -eq 0 ]; then
+              echo "exists=true" >> $GITHUB_OUTPUT
+            else
+              echo "exists=false" >> $GITHUB_OUTPUT
+            fi
+      - if: ${{ steps.check-service.outputs.exists == 'true' }}
+        continue-on-error: false
+        run: |
+            echo service exist
+            gcloud run services describe ${{ env.REPO_NAME }} --region ${{ vars.GCP_REGION }} --format yaml > service.yaml
+            sed -i -e "s#image: .*#image: ${{ env.GCP_ARTIFACT_REGISTRY_BASE }}/${{ env.REPO_NAME }}:${{ env.IMAGE_TAG }}#g" service.yaml
+            cp -f service.yaml deployment/scripts/service.yaml
+            ls -al deployment/scripts/
+            ls -al
+            cd deployment/scripts/ && python3 process_yaml.py
+            mv service-out.yaml ${{ github.workspace }}/service.yaml
+            cat ${{ github.workspace }}/service.yaml
+        env:
+          build_number: ${{ github.run_id }}
+          deploy_environment: prod
+      - if: ${{ steps.check-service.outputs.exists == 'false' }}
+        continue-on-error: false
+        run: |
+            echo service doesnt exist
+            PORT_NUMBER=80
+            sed -i -e "s#image: .*#image: ${{ env.GCP_ARTIFACT_REGISTRY_BASE }}/${{ env.REPO_NAME }}:${{ env.IMAGE_TAG }}#g" deployment/scripts/service-internal.yaml
+            sed -i -e "s#containerPort: .*#containerPort: $PORT_NUMBER#g" deployment/scripts/service-internal.yaml
+            yq eval ".metadata.name = \"${{ env.REPO_NAME }}\"" -i deployment/scripts/service-internal.yaml
+            ls -al deployment/scripts/
+            ls -al
+            cd deployment/scripts/ && python3 process_yaml.py
+            mv service-out.yaml ${{ github.workspace }}/service.yaml
+            cat ${{ github.workspace }}/service.yaml
+        env:
+          deploy_environment: prod
+          build_number: ${{ github.run_id }}
+          template_file: service-internal.yaml
+      - id: deploy
+        name: Deploy
+        uses: 'google-github-actions/deploy-cloudrun@v2'
+        with:
+          metadata: service.yaml
+          region: ${{ vars.GCP_REGION }}
+          flags: '--verbosity=debug --log-http'
